@@ -10,11 +10,15 @@ import {signInAndGetUser} from '../lib/microsoftGraph.js'
 
 export default {
   name: 'SigninButton',
-  props: {
-    msg: String
-  },
   data(){
-    signInAndGetUser()
+    return{
+      
+    }
+  },
+  methods: {
+    signInAndGetUser(){
+      signInAndGetUser();
+    },
   },
 }
 </script>
