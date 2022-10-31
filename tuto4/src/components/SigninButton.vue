@@ -1,7 +1,7 @@
 <template>
   <div>
-      <h1>SigninButton</h1>
-      <button @click="signInAndGetUser()">Sign in</button>
+    <p>Test a message : {{message}}</p>
+    <button class="user" @click="cli()">Sign in</button>
   </div>
 </template>
 
@@ -10,13 +10,14 @@ import {signInAndGetUser} from '../lib/microsoftGraph.js'
 
 export default {
   name: 'SigninButton',
+  props: ["message"],
   data(){
     return{
-      
     }
   },
   methods: {
-    signInAndGetUser(){
+    cli(){
+      this.$emit("customEventName", "blablabla");
       signInAndGetUser();
     },
   },
@@ -31,5 +32,4 @@ button{
     color: black;
     border-radius: 10%;
 }
-
 </style>
